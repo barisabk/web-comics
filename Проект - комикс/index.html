@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comics</title>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <link rel="stylesheet" href="myStyle.css">
+
+</head>
+<body>
+    <div class="section-read">
+        <div class="click-for-read">
+            <a class="click-link" href=""><h2>Click to read the story!</h2></a>
+        </div>
+    </div>
+
+    <div class="section-funny">
+            <h2><a class="funny-link" href="">...Maybe it's kind a funny story...but I don't think so >></a></h2>
+    </div>
+
+   <div class="section-comics">
+        <div class="inside-comics">
+            <div class="comics-slider"></div>
+        </div>
+   </div>
+
+   <script>
+       let data = 
+           [
+               {
+                   "id": 1,
+                   "images": [
+                       {"picture": "comics/1.png"},
+                       {"picture": "comics/2.png"},
+                       {"picture": "comics/3.png"},
+                       {"picture": "comics/4.png"},
+                   ]
+               },
+
+               {
+                   "id": 2,
+                   "images": [
+                       {"picture": "comics/5.png"},
+                       {"picture": "comics/6.png"},
+                       {"picture": "comics/7.png"},
+                       {"picture": "comics/8.png"},
+                   ]
+               },
+
+               {
+                   "id": 3,
+                   "images": [
+                       {"picture": "comics/9.png"},
+                       {"picture": "comics/10.png"},
+                       {"picture": "comics/11.png"},
+                       {"picture": "comics/12.png"},
+                   ]
+               },
+               {
+                   "id": 4,
+                   "images": [
+                       {"picture": "comics/13.png"},
+                       {"picture": "comics/14.png"},
+                       {"picture": "comics/15.png"},
+                       {"picture": "comics/16.png"},
+                   ]
+               },
+               {
+                   "id": 5,
+                   "images": [
+                       {"picture": "comics/17.png"},
+                       {"picture": "comics/18.png"},
+                       {"picture": "comics/19.png"},
+                       {"picture": "comics/20.png"},
+                   ]
+               },
+               {
+                   "id": 6,
+                   "images": [
+                       {"picture": "comics/21.png"},
+                       {"picture": "comics/22.png"},
+                       {"picture": "comics/23.png"},
+                       {"picture": "comics/24.png"},
+                   ]
+               },
+           ];
+
+       let comicsSlider = document.querySelector('.comics-slider');
+       //console.log(comicsSlider)
+       for (let i = 0; i < data.length; i++) {
+         //див за картинки
+          let comicsSlide = document.createElement("div");
+          comicsSlide.className = "comics-slide"; 
+          comicsSlider.appendChild(comicsSlide);
+
+          //пълним дива с картинките
+           for(let j = 0; j < data[i].images.length; j++){
+               let img = document.createElement('img');
+               img.src = data[i].images[j].picture;
+               comicsSlide.appendChild(img);
+           }
+         //  console.log(data[i].images[j])
+       }
+
+   
+       // 1 DOMContentLoaded
+       $(document).ready(function() {
+
+            $('.click-link').on("click", function(e) { //2. 
+                e.preventDefault()
+                //3. 
+                 $( 'html, body' ).animate({
+                        scrollTop: $('.section-funny').offset().top 
+                  }, '5000' ); 
+            });
+
+            $('.funny-link').on("click", function(e) { //4.
+                e.preventDefault()
+
+                 $( 'html, body' ).animate({
+                        scrollTop: $('.section-comics').offset().top //до къде ще скролна
+                  }, '300' );
+            });
+
+            $(window).on("load", function() {
+              $(".comics-slider").slick({ //бутони
+                slidesToShow: 1, 
+                slidesToScroll: 1, 
+                infinite: false,
+                adaptiveHeight: true
+              })
+            })
+       })
+   </script>
+</body>
+</html>

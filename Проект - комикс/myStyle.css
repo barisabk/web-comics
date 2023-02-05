@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
+/* *
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+html{
+    height:100%;
+    font-family: 'Langar', cursive;
+}
+
+body{
+/* display: flex; */
+/* justify-content: center;
+align-items: center; */
+margin: 0; 
+height: 100%; 
+width: 100%; 
+}
+
+.section-read {
+   background: url('heart.png'), linear-gradient(#7b8ca7,#6f9ce0,#876fe0,#503085);
+   background-repeat: repeat;
+   height: 100vh; 
+   width: 100%; 
+}
+
+.section-funny {
+    height: 100vh;
+    /* display: -webkit-flex;  */
+    display: flex; 
+    text-align: center; 
+    align-items: center;
+}
+
+/* .slick-list{
+    height: 700px;
+} */
+
+.section-funny h2 {
+    text-align: center; 
+    display: block; 
+    width: 100%; 
+}
+
+.click-for-read{
+    display: flex;
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+h2{
+    padding: 0px;
+    margin: 0px;
+}
+.click-link, .slick-next, .slick-prev{
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    background-color: rgb(231, 20, 73);
+    border: solid 2px;
+    border-radius: 20px;
+}
+
+.slick-next, .slick-prev{
+    font-size: 30px;
+}
+.maybe-funny{
+ /*    display: none; */
+    position: absolute;
+    margin: 0;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.funny-link{
+    text-decoration: none;
+    color: black;
+}
+
+.comics{
+    display: none;
+    position: absolute; 
+    margin: 0;
+    /* top: 20%;
+    left: 10%; */
+}
+
+/* .next-link{
+    display: none;
+    position: absolute;
+    top: 450px;
+    left: 1350px;
+} */
+
+.comics-slide {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%; 
+}
+
+.comics-slide img {
+    display: inline-block; 
+    flex: 0 0 50%;
+    width: 50%; 
+    max-width: 50%;
+    border:  10px solid white;
+    margin: 0; 
+    box-sizing: border-box; 
+}
+
+
+.inside-comics {
+    max-width: 1230px;
+    padding: 0 15px;
+
+    margin:  0 auto;
+}
+ 
+@media(max-width: 767px){ 
+    .comics-slide img {
+        display: inline-block; 
+        flex: 0 0 100%;
+        width: 100%; 
+        max-width: 100%;
+        border:  10px solid white;
+        margin: 0; 
+        box-sizing: border-box;
+    }
+}
